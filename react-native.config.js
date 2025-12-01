@@ -4,6 +4,9 @@ module.exports = {
       ios: {
         podspecPath: "react-native-apple-llm.podspec",
       },
+      macos: {
+        podspecPath: "react-native-apple-llm.podspec",
+      },
     },
   },
 };

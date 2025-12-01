@@ -13,8 +13,9 @@ Pod::Spec.new do |s|
   s.authors                 = { package["author"]["name"] => package["author"]["email"] }
 
   s.ios.deployment_target   = '13.0'
+  s.osx.deployment_target   = '15.0'
   s.source                  = { :git => "https://github.com/deveix/react-native-apple-llm.git", :tag => "v#{s.version}" }
-  s.source_files            = "ios/**/*.{h,m,mm,swift}"
+  s.source_files            = "apple/**/*.{h,m,mm,swift}"
   
   s.dependency 'React-Core'
 

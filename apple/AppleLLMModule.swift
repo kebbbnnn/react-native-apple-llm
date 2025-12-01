@@ -9,7 +9,7 @@ import FoundationModels
 import React
 
 
-@available(iOS 26, *)
+@available(iOS 26, macOS 26, *)
 class BridgeTool: Tool, @unchecked Sendable {
 
     typealias Arguments = GeneratedContent
@@ -45,7 +45,7 @@ class BridgeTool: Tool, @unchecked Sendable {
 }
 
 @objc(AppleLLMModule)
-@available(iOS 26, *)
+@available(iOS 26, macOS 26, *)
 @objcMembers
 class AppleLLMModule: RCTEventEmitter {
 
@@ -74,7 +74,7 @@ class AppleLLMModule: RCTEventEmitter {
     rejecter reject: @escaping RCTPromiseRejectBlock
   ) {
     #if canImport(FoundationModels)
-      if #available(iOS 26, *) {
+      if #available(iOS 26, macOS 26, *) {
         // SystemLanguageModel is available in FoundationModels
         let model = SystemLanguageModel.default
         switch model.availability {
@@ -484,7 +484,7 @@ class AppleLLMModule: RCTEventEmitter {
 }
 
 // refernce: https://developer.apple.com/forums/thread/792076?answerId=848076022#848076022
-@available(iOS 26.0, *)
+@available(iOS 26.0, macOS 26.0, *)
 private func handleGeneratedError(_ error: LanguageModelSession.GenerationError) -> String {
     switch error {
     case .exceededContextWindowSize(let context):
@@ -506,7 +506,7 @@ private func handleGeneratedError(_ error: LanguageModelSession.GenerationError)
     }
 }
 
-@available(iOS 26.0, *)
+@available(iOS 26.0, macOS 26.0, *)
 private func presentGeneratedError(_ error: LanguageModelSession.GenerationError,
                                    context: LanguageModelSession.GenerationError.Context) -> String {
     return """

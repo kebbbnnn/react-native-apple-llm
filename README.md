@@ -4,19 +4,19 @@ A React Native plugin to access Apple Intelligence Foundation Model framework us
 
 ## Features
 
-- **On-device Apple Intelligence** - Access Apple's Foundation Models locally
+- **On-device Apple Intelligence** - Access Apple's Foundation Models locally on iOS and macOS
 - **Privacy-focused** - All processing happens on-device, no data sent to servers
 - **Structured JSON output** - Generate structured data with JSON schemas
 - **Text generation** - Create human-like text responses
 - **Session management** - Configure and manage LLM sessions
 - **TypeScript support** - Full type safety and IntelliSense
 - **Custom tools** - User defined tool-box available for LLM use 
+- **Cross-platform** - Works on both iOS and macOS with React Native 
 
 ## Requirements
 
-- iOS 26.0
-- Xcode 26
-- Apple Intelligence enabled device (iPhone 15 Pro, iPhone 16 series, M1+ iPad/Mac) or simulator (MacOS 26 required)
+- **iOS**: iOS 26.0+, Xcode 26+, Apple Intelligence enabled device (iPhone 15 Pro, iPhone 16 series) or iOS Simulator (macOS 26+ required)
+- **macOS**: macOS 26.0+, Xcode 26+, Apple Silicon Mac (M1 or later)
 
 <div align="center">
 
@@ -47,8 +47,10 @@ pnpm add react-native-apple-llm
 
 ```sh
 npx pod-install
-# or if using CocoaPods directly
-cd ios && pod install
+# or if using CocoaPods directly for your platform
+cd ios && pod install    # For iOS projects
+cd macos && pod install  # For macOS projects
+# Note: Both platforms use the shared implementation from the 'apple' directory
 ```
 
 ## Use Cases
